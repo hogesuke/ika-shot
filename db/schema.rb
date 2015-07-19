@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150719122632) do
+ActiveRecord::Schema.define(version: 20150719195930) do
 
   create_table "results", force: :cascade do |t|
     t.string   "result",     limit: 255
     t.datetime "date"
-    t.binary   "image",      limit: 65535
+    t.binary   "image",      limit: 16777215
     t.datetime "created_at"
     t.datetime "updated_at"
   end

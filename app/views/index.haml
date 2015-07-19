@@ -1,0 +1,11 @@
+%html
+  %head
+    %title ika-shot
+  %body
+    %h1 とりあえずテスト
+    #content
+      - @results.each do |result|
+        %div= result.result
+        %div
+          %img{:src => "/image/#{result.id}"}
+        %div= result.date
