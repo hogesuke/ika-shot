@@ -1,0 +1,16 @@
+development:
+  adapter: mysql2
+  database: ikashot
+  host: localhost
+  username: testuser
+  password: password
+  encoding: utf8
+
+production:
+  adapter: mysql2
+  database: ikashot
+  host: localhost
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  encoding: utf8
+
