@@ -1,0 +1,20 @@
+{
+  "name": "ika-shot",
+  "version": "0.0.1",
+  "homepage": "https://github.com/hogesuke/ika-shot",
+  "authors": [
+    "hogesuke <miyado@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.3.0"
+  }
+}
