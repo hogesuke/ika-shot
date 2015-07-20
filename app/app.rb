@@ -32,7 +32,7 @@ end
 
 get '/' do
 
-  @results = Result.all
+  @items = Result.all
 
   haml :index
 end

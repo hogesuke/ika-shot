@@ -1,0 +1,37 @@
+.header {
+    padding: 60px;
+    background-color: #63498B;
+    color: #ffffff;
+}
+
+.header h1 {
+    margin-top: 0;
+    font-size: 60px;
+}
+
+.header p {
+    color: #cdbfe3;
+    font-size: 24px;
+}
+
+.header > .container > a > button > span {
+    font-size: 18px;
+}
+
+.result-label {
+    font-size: 20px;
+}
+
+.result-date {
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+.result-image-container {
+    padding: 10px 0;
+}
+
+.result-image {
+    height: 240px;
+    width: 320px;
+}

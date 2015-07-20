@@ -1,12 +1,25 @@
 !!!
 %html
   %head
+    %link{ :rel => 'stylesheet', :href => './bower_components/bootstrap/dist/css/bootstrap.min.css' }
+    %link{ :rel => 'stylesheet', :href => './bower_components/font-awesome/css/font-awesome.min.css' }
+    %link{ :rel => 'stylesheet', :href => './css/ui.css' }
     %title ika-shot
   %body
-    %h1 とりあえずテスト
-    #content
-      - @results.each do |result|
-        %div= result.result
-        %div
-          %img{:src => "/image/#{result.id}"}
-        %div= result.date
+    %div.header
+      %div.container
+        %h1 Ikashot
+        %p Splatoonの結果記録プログラムのサンプルです。
+        %a{ :href => 'https://github.com/hogesuke/ika-shot', :target => '_blank' }
+          %button.btn.btn-default.btn-lg
+            %span.fa.fa-github-alt &nbsp;View on GitHub
+    %div.container
+      %h2.page-header Summary
+      %h2.page-header Results
+      - @items.each do |item|
+        %div.row
+          %div.col-md-12
+            %span.result-label.label.label-primary= item.result
+            %span.result-date= item.date
+            %div.result-image-container
+              %img.result-image.thumbnail{ :src => "/image/#{item.id}" }
