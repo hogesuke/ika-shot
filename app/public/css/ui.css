@@ -1,25 +1,21 @@
-.header {
-    padding: 60px;
-    background-color: #63498B;
+.jumbotron {
+    background: url("../img/ikachan_background.png") #5d4384 center center / cover no-repeat;
     color: #ffffff;
 }
 
-.header h1 {
-    margin-top: 0;
-    font-size: 60px;
-}
-
-.header p {
+.jumbotron p {
     color: #cdbfe3;
-    font-size: 24px;
 }
 
-.header > .container > a > button > span {
-    font-size: 18px;
+.btn-github {
+    background-color: transparent;
+    border: solid 1px #ffffff;
+    color: #ffffff;
 }
 
-.result-label {
-    font-size: 20px;
+.btn-github:hover {
+    background-color: #ffffff;
+    color: #5d4384;
 }
 
 .result-date {
@@ -34,4 +30,14 @@
 .result-image {
     height: 240px;
     width: 320px;
+}
+
+.label-result {
+    font-size: 20px;
+}
+
+.label-result.win {
+    background-color: transparent;
+    border: solid 1px #337ab7;
+    color: #337ab7;
 }

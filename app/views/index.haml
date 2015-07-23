@@ -6,12 +6,12 @@
     %link{ :rel => 'stylesheet', :href => './css/ui.css' }
     %title ika-shot
   %body
-    %div.header
+    %div.jumbotron
       %div.container
         %h1 Ikashot
         %p Splatoonの結果記録プログラムのサンプルです。
         %a{ :href => 'https://github.com/hogesuke/ika-shot', :target => '_blank' }
-          %button.btn.btn-default.btn-lg
+          %button.btn.btn-lg.btn-github
             %span.fa.fa-github-alt &nbsp;View on GitHub
     %div.container
       %h2.page-header Summary
@@ -19,7 +19,10 @@
       - @items.each do |item|
         %div.row
           %div.col-md-12
-            %span.result-label.label.label-primary= item.result
+            -if item.result == 'win'
+              %span.label-result.label.win= item.result
+            -else
+              %span.label-result.label.lose= item.result
             %span.result-date= item.date
             %div.result-image-container
               %img.result-image.thumbnail{ :src => "/image/#{item.id}" }
