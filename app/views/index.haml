@@ -15,6 +15,8 @@
             %span.fa.fa-github-alt &nbsp;View on GitHub
     %div.container
       %h2.page-header Summary
+      %div.progress
+        %div.progress-bar{ 'aria-valuenow' => @win_rate, 'aria-valuemin' => '0', 'aria-valuemax' => '100', :style => "width: #{@win_rate}%" }= @win_rate
       %h2.page-header Results
       - @items.each do |item|
         %div.row

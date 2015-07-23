@@ -33,6 +33,15 @@ end
 get '/' do
 
   @items = Result.all
+  @counts = Result.group('result').count()
+
+  if @counts['win'].nil?
+    @win_rate  = 0
+  elsif @counts['lose'].nil?
+    @win_rate  = 100
+  else
+    @win_rate = @counts['win'] / (@counts['win'] + @counts['lose'])
+  end
 
   haml :index
 end
@@ -45,7 +54,6 @@ get '/image/:id' do
   end
 
   result = Result.find(params[:id])
-  # send_data(result.image, :disposition => 'inline', :type => 'image/jpeg')
 
   content_type('application/octet-stream')
   result.image
