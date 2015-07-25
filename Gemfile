@@ -7,3 +7,7 @@ gem 'activerecord', '~> 4.2.2'
 gem 'sinatra-activerecord', '~> 2.0.6'
 gem 'json', '~> 1.8.3'
 gem 'haml', '~> 4.0.6'
+
+group :production do
+  gem 'unicorn', '~> 4.8.3'
+end
