@@ -88,3 +88,6 @@ build/
 
 # ActiveRecord
 db/migrate
+
+# others
+env.sh
