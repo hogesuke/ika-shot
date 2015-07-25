@@ -1,10 +1,12 @@
+@dir = __dir__
+
 worker_processes 2
-working_directory './'
+working_directory @dir
 
 timeout 300
 listen 4567
 
-pid "./tmp/pids/unicorn.pid"
+pid "#{@dir}tmp/pids/unicorn.pid"
 
-stderr_path "./log/unicorn.stderr.log"
-stdout_path "./log/unicorn.stdout.log"
+stderr_path "#{@dir}log/unicorn.stderr.log"
+stdout_path "#{@dir}log/unicorn.stdout.log"
