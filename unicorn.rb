@@ -4,8 +4,7 @@ worker_processes 2
 working_directory @dir
 
 timeout 300
-# listen 4567
-listen "/tmp/ikashot.sock", backlog: 1024 # UNIXソケットを見るように変更
+listen "/var/sockets/ikashot.sock", backlog: 1024
 
 pid "#{@dir}tmp/pids/unicorn.pid"
 
