@@ -67,7 +67,7 @@ post '/upload' do
   result.date   = params['datetime']
   result.image  = params['image'][:tempfile].read
 
-  if result.save
+  unless result.save
     status(400)
     { :result => false }.to_json
   end
