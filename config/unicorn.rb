@@ -1,4 +1,4 @@
-@dir = __dir__
+@dir = File.join(__dir__, '../')
 
 worker_processes 2
 working_directory @dir
