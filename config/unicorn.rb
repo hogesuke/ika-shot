@@ -1,7 +1,7 @@
 @dir = File.join(__dir__, '../')
 
 worker_processes 2
-working_directory @dir
+working_directory "#{@dir}app/"
 
 timeout 300
 listen "/var/sockets/ikashot.sock", backlog: 1024
