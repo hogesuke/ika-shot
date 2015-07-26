@@ -26,10 +26,6 @@ after do
   ActiveRecord::Base.connection.close
 end
 
-# todo エラー処理
-error do
-end
-
 get '/' do
 
   @items = Result.all
@@ -50,7 +46,7 @@ get '/image/:id' do
 
   unless Result.exists?(params[:id])
     status(400)
-    raise("対象のレコードは存在しません")
+    return { :result => false, :msg => '対象のレコードは存在しません' }.to_json
   end
 
   result = Result.find(params[:id])
@@ -63,7 +59,7 @@ post '/upload' do
 
   if settings.secret != params['secret']
     status(403)
-    raise("認証に失敗しました")
+    return { :result => false, :msg => '認証に失敗しました' }.to_json
   end
 
   result = Result.new
