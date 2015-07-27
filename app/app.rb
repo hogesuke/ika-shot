@@ -36,7 +36,7 @@ get '/' do
   elsif @counts['lose'].nil?
     @win_rate  = 100
   else
-    @win_rate = @counts['win'] / (@counts['win'] + @counts['lose'])
+    @win_rate = (@counts['win'] / (@counts['win'] + @counts['lose'])) * 100
   end
 
   haml :index
