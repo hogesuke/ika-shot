@@ -22,9 +22,9 @@
         %div.row
           %div.col-md-12
             -if item.result == 'win'
-              %span.label-result.label.win= item.result
+              %span.label-result.label.win WIN
             -else
-              %span.label-result.label.lose= item.result
+              %span.label-result.label.lose LOSE
             %span.result-date= item.date
             %div.result-image-container
               %img.result-image.thumbnail{ :src => "/image/#{item.id}" }

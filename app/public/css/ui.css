@@ -36,8 +36,17 @@
     font-size: 20px;
 }
 
-.label-result.win {
+.label-result {
     background-color: transparent;
-    border: solid 1px #337ab7;
+    border: solid 1px;
+}
+
+.label-result.win {
+    border-color: #337ab7;
     color: #337ab7;
+}
+
+.label-result.lose {
+    border-color: #d9534f;
+    color: #d9534f;
 }
