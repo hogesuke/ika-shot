@@ -28,7 +28,7 @@ end
 
 get '/' do
 
-  @items = Result.all
+  @items = Result.order('date DESC')
   @counts = Result.group('result').count()
 
   if @counts['win'].nil?
