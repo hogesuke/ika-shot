@@ -15,16 +15,20 @@
             %span.fa.fa-github-alt &nbsp;View on GitHub
     %div.container
       %h2.page-header Summary
+      %div.count-container
+        %span.count-label.win WIN
+        %span.count= @counts['win'].to_s
+        %span.count-label.lose LOSE
+        %span.count= @counts['lose'].to_s
       %div.progress
-        %div.progress-bar{ 'aria-valuenow' => @win_rate, 'aria-valuemin' => '0', 'aria-valuemax' => '100', :style => "width: #{@win_rate}%" }= @win_rate
+        %div.progress-bar.progress-bar-primary{ :style => "width: #{@win_rate}%" }= @win_rate.to_s + '%'
+        %div.progress-bar.progress-bar-danger{ :style => "width: #{100 - @win_rate}%" }= (100 - @win_rate).to_s + '%'
       %h2.page-header Results
       - @items.each do |item|
-        %div.row
-          %div.col-md-12
-            -if item.result == 'win'
-              %span.label-result.label.win WIN
-            -else
-              %span.label-result.label.lose LOSE
-            %span.result-date= item.date
-            %div.result-image-container
-              %img.result-image.thumbnail{ :src => "/image/#{item.id}" }
+        %div.thumbnail.result-image-container
+          %img.result-image{ :src => "/image/#{item.id}" }
+          -if item.result == 'win'
+            %span.label-result.label.win WIN
+          -else
+            %span.label-result.label.lose LOSE
+          %span.result-date= item.date.strftime('%Y/%m/%d %H:%M')
