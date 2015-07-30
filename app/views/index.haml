@@ -8,13 +8,13 @@
   %body
     %div.jumbotron
       %div.container
-        %h1 Ikashot
+        %h1.ika-font イカショット
         %p Splatoonの結果記録プログラムのサンプルです。
         %a{ :href => 'https://github.com/hogesuke/ika-shot', :target => '_blank' }
           %button.btn.btn-lg.btn-github
             %span.fa.fa-github-alt &nbsp;View on GitHub
     %div.container
-      %h2.page-header Summary
+      %h2.page-header.ika-font サマリ
       %div.count-container
         %span.count-label.win WIN
         %span.count= @counts['win'].to_s
@@ -23,7 +23,7 @@
       %div.progress
         %div.progress-bar.progress-bar-primary{ :style => "width: #{@win_rate}%" }= @win_rate.to_s + '%'
         %div.progress-bar.progress-bar-danger{ :style => "width: #{100 - @win_rate}%" }= (100 - @win_rate).to_s + '%'
-      %h2.page-header Results
+      %h2.page-header.ika-font リザルト
       - @items.each do |item|
         %div.thumbnail.result-image-container
           %img.result-image{ :src => "/image/#{item.id}" }
