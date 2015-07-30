@@ -12,7 +12,9 @@
     color: #ffffff;
 }
 
-.jumbotron p {
+.jumbotron .description {
+    margin: 10px 0 15px 0;
+    font-size: 18px;
     color: #cdbfe3;
 }
 
