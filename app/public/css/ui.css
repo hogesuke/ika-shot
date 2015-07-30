@@ -29,6 +29,10 @@
     color: #5d4384;
 }
 
+.page-header {
+    color: #565656;
+}
+
 .count-container {
     margin-bottom: 15px;
 }
@@ -62,6 +66,14 @@
 .progress-bar {
     line-height: 35px;
     font-size: 15px;
+}
+
+.progress-bar-primary {
+    background-color: #0B94DB;
+}
+
+.progress-bar-danger {
+    background-color: #d9404a;
 }
 
 .result-image-container {
