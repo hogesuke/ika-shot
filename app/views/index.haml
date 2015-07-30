@@ -25,7 +25,7 @@
         %span.count= @counts['lose'].to_s
       %div.progress
         %div.progress-bar.progress-bar-primary{ :style => "width: #{@win_rate}%" }= @win_rate.to_s + '%'
-        %div.progress-bar.progress-bar-danger{ :style => "width: #{100 - @win_rate}%" }= (100 - @win_rate).to_s + '%'
+        %div.progress-bar.progress-bar-danger{ :style => "width: #{@lose_rate}%" }= @lose_rate.to_s + '%'
       %h2.page-header.ika-font リザルト
       - @items.each do |item|
         %div.thumbnail.result-image-container
