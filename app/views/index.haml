@@ -1,6 +1,8 @@
 !!!
 %html
   %head
+    %script{ :type => 'application/javascript', :src => './bower_components/jquery/dist/jquery.min.js' }
+    %script{ :type => 'application/javascript', :src => './js/main.js' }
     %link{ :rel => 'stylesheet', :href => './bower_components/bootstrap/dist/css/bootstrap.min.css' }
     %link{ :rel => 'stylesheet', :href => './bower_components/font-awesome/css/font-awesome.min.css' }
     %link{ :rel => 'stylesheet', :href => './css/ui.css' }
@@ -27,11 +29,7 @@
         %div.progress-bar.progress-bar-primary{ :style => "width: #{@win_rate}%" }= @win_rate.to_s + '%'
         %div.progress-bar.progress-bar-danger{ :style => "width: #{@lose_rate}%" }= @lose_rate.to_s + '%'
       %h2.page-header.ika-font リザルト
-      - @items.each do |item|
-        %div.thumbnail.result-image-container
-          %img.result-image{ :src => "/image/#{item.id}" }
-          -if item.result == 'win'
-            %span.label-result.label.win WIN
-          -else
-            %span.label-result.label.lose LOSE
-          %span.result-date= item.date.strftime('%Y/%m/%d %H:%M')
+      %div#result-container
+        - @items.each do |item|
+          = haml :result, :locals => { :item => item }
+      %div#load LOAD

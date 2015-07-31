@@ -1,0 +1,7 @@
+%div.thumbnail.result-image-container
+  %img.result-image{ :src => "/image/#{item.id}" }
+  -if item.result == 'win'
+    %span.label-result.label.win WIN
+  -else
+    %span.label-result.label.lose LOSE
+  %span.result-date= item.date.strftime('%Y/%m/%d %H:%M')

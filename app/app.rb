@@ -15,7 +15,7 @@ ActiveRecord::Base.establish_connection(settings.environment)
 
 configure :production, :development do
   set :secret, ENV['SECRET']
-  set :per_page, 10
+  set :per_page, 30
   set :haml, :format => :html5
 end
 
@@ -29,7 +29,7 @@ end
 
 get '/' do
 
-  @items = Result.order('date DESC').limit(10)
+  @items = Result.order('date DESC').limit(settings.per_page)
   @counts = Result.group('result').count()
 
   if @counts['win'].nil?
@@ -58,7 +58,12 @@ get '/page/:page' do
   page = params[:page].to_i
   items = Result.order('date DESC').offset(settings.per_page * page).limit(settings.per_page)
 
-  return { :result => true, :items => items }.to_json
+  rendered_items = []
+  items.each do |item|
+    rendered_items.push(haml(:result, :locals => { :item => item }))
+  end
+
+  { :result => true, :items => rendered_items }.to_json
 end
 
 get '/image/:id' do
