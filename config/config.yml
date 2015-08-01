@@ -1,0 +1,2 @@
+# 勝敗をuploadする際の認証に使用するsecret-token
+secret: change-me

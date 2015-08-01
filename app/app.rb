@@ -14,7 +14,9 @@ ActiveRecord::Base.configurations = YAML.load_file(File.join(__dir__, '../config
 ActiveRecord::Base.establish_connection(settings.environment)
 
 configure :production, :development do
-  set :secret, ENV['SECRET']
+  config = YAML.load_file(File.join(__dir__, '../config/config.yml'))
+
+  set :secret, config['secret']
   set :per_page, 30
   set :haml, :format => :html5
 end
