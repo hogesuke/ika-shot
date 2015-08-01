@@ -9,7 +9,7 @@
 
 .jumbotron {
     padding-top: 20px;
-    background: url("../img/ikachan_background.png") #5d4384 center center / cover no-repeat;
+    background-color: #5d4384;
     color: #ffffff;
 }
 
