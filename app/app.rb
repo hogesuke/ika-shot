@@ -58,7 +58,7 @@ get '/page/:page' do
   end
 
   page = params[:page].to_i
-  items = Result.order('date DESC').offset(settings.per_page * page).limit(settings.per_page)
+  items = Result.order('date DESC').offset(settings.per_page * (page - 1)).limit(settings.per_page)
 
   rendered_items = []
   items.each do |item|
