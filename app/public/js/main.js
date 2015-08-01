@@ -1,4 +1,7 @@
 jQuery(function ($) {
+
+  doVisible();
+
   var current_page = 1;
   var $load = $('#load');
 
@@ -15,6 +18,15 @@ jQuery(function ($) {
       $.each(items, function (i, item) {
         $('#result-container').append(item);
       });
+      doVisible();
     });
   });
+
+  function doVisible() {
+    setTimeout(function () {
+      $('.result-image-container:not(.visible)').each(function (i, item) {
+        $(item).addClass('visible');
+      });
+    }, 100);
+  }
 });
