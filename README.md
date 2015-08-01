@@ -1,6 +1,6 @@
 ika-shot
 =========
-スプラトゥーンの勝敗を記録するWebアプリケーションです。
+スプラトゥーンの勝敗を閲覧するWebアプリケーションです。
 
 ## スクリーンショット
 ![screenshot](https://raw.github.com/wiki/hogesuke/ika-shot/img/ika-shot.png)
