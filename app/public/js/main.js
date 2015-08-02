@@ -27,6 +27,6 @@ jQuery(function ($) {
       $('.result-image-container:not(.visible)').each(function (i, item) {
         $(item).addClass('visible');
       });
-    }, 100);
+    }, 200);
   }
 });
