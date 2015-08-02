@@ -24,7 +24,7 @@
     border: solid 1px #ffffff;
     color: #ffffff;
 
-    transition-property: all;
+    transition-property: background-color, color;
     transition-duration: 0.3s;
 }
 
@@ -135,7 +135,7 @@
     font-size: 20px;
     color: #5cc256;
 
-    transition-property: all;
+    transition-property: background-color, color, cursor;
     transition-duration: 0.3s;
 }
 
