@@ -95,7 +95,7 @@ post '/upload' do
 
   unless result.save
     status(400)
-    { :result => false }.to_json
+    return { :result => false }.to_json
   end
 
   { :result => true }.to_json
