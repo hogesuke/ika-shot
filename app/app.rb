@@ -32,7 +32,7 @@ end
 get '/' do
 
   @items = Result.order('date DESC').limit(settings.per_page)
-  @counts = Result.group('result').count()
+  @counts = Result.group('result').count
 
   if @counts['win'].nil?
     @win_rate  = 0
