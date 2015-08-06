@@ -44,10 +44,28 @@ get '/' do
     @total_lose_rate  = 0
     @total_counts['lose'] = 0
   end
-  if not @total_counts['win'].nil? and not @total_counts['lose'].nil?
+  if @total_counts['win'] != 0 and @total_counts['lose'] != 0
     @total_win_rate = (@total_counts['win'] / (@total_counts['win'] + @total_counts['lose']).to_f) * 100
     @total_win_rate = @total_win_rate.round(1)
     @total_lose_rate = (100 - @total_win_rate).round(1)
+  end
+
+  @today_counts = Result.where('? <= date', (Time.now - 24 * 60 * 60).strftime('%Y-%m-%d %H:%M:%S')).group('result').count
+
+  if @today_counts['win'].nil?
+    @today_win_rate  = 0
+    @today_lose_rate  = 100
+    @today_counts['win'] = 0
+  end
+  if @today_counts['lose'].nil?
+    @today_win_rate  = 100
+    @today_lose_rate  = 0
+    @today_counts['lose'] = 0
+  end
+  if @today_counts['win'] != 0 and @today_counts['lose'] != 0
+    @today_win_rate = (@today_counts['win'] / (@today_counts['win'] + @today_counts['lose']).to_f) * 100
+    @today_win_rate = @today_win_rate.round(1)
+    @today_lose_rate = (100 - @today_win_rate).round(1)
   end
 
   @week_counts = Result.where('? <= date', (Time.now - 7 * 24 * 60 * 60).strftime('%Y-%m-%d %H:%M:%S')).group('result').count
@@ -62,7 +80,7 @@ get '/' do
     @week_lose_rate  = 0
     @week_counts['lose'] = 0
   end
-  if not @week_counts['win'].nil? and not @week_counts['lose'].nil?
+  if @week_counts['win'] != 0 and @week_counts['lose'] != 0
     @week_win_rate = (@week_counts['win'] / (@week_counts['win'] + @week_counts['lose']).to_f) * 100
     @week_win_rate = @week_win_rate.round(1)
     @week_lose_rate = (100 - @week_win_rate).round(1)
