@@ -33,7 +33,7 @@
     color: #5d4384;
 }
 
-.page-header {
+.page-header, .count-header {
     color: #565656;
 }
 

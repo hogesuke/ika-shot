@@ -32,18 +32,40 @@ end
 get '/' do
 
   @items = Result.order('date DESC').limit(settings.per_page)
-  @counts = Result.group('result').count
+  @total_counts = Result.group('result').count
 
-  if @counts['win'].nil?
-    @win_rate  = 0
-    @lose_rate  = 100
-  elsif @counts['lose'].nil?
-    @win_rate  = 100
-    @lose_rate  = 0
-  else
-    @win_rate = (@counts['win'] / (@counts['win'] + @counts['lose']).to_f) * 100
-    @win_rate = @win_rate.round(1)
-    @lose_rate = (100 - @win_rate).round(1)
+  if @total_counts['win'].nil?
+    @total_win_rate  = 0
+    @total_lose_rate  = 100
+    @total_counts['win'] = 0
+  end
+  if @total_counts['lose'].nil?
+    @total_win_rate  = 100
+    @total_lose_rate  = 0
+    @total_counts['lose'] = 0
+  end
+  if not @total_counts['win'].nil? and not @total_counts['lose'].nil?
+    @total_win_rate = (@total_counts['win'] / (@total_counts['win'] + @total_counts['lose']).to_f) * 100
+    @total_win_rate = @total_win_rate.round(1)
+    @total_lose_rate = (100 - @total_win_rate).round(1)
+  end
+
+  @week_counts = Result.where('? <= date', (Time.now - 7 * 24 * 60 * 60).strftime('%Y-%m-%d %H:%M:%S')).group('result').count
+
+  if @week_counts['win'].nil?
+    @week_win_rate  = 0
+    @week_lose_rate  = 100
+    @week_counts['win'] = 0
+  end
+  if @week_counts['lose'].nil?
+    @week_win_rate  = 100
+    @week_lose_rate  = 0
+    @week_counts['lose'] = 0
+  end
+  if not @week_counts['win'].nil? and not @week_counts['lose'].nil?
+    @week_win_rate = (@week_counts['win'] / (@week_counts['win'] + @week_counts['lose']).to_f) * 100
+    @week_win_rate = @week_win_rate.round(1)
+    @week_lose_rate = (100 - @week_win_rate).round(1)
   end
 
   haml :index
