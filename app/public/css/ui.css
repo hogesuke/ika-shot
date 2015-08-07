@@ -37,39 +37,70 @@
     color: #565656;
 }
 
+.summary-block.small {
+    float: left;
+    width: 50%;
+    padding: 0 5px;
+}
+
 .count-container {
     margin-bottom: 15px;
 }
 
-.count-label {
+.count-container.small {
+    margin-bottom: 11px;
+}
+
+.count-container.small h4 {
+    margin-top: 0;
+}
+
+.count-container .count-label {
     padding: 5px 10px;
     border: solid 1px;
     border-radius: 3px;
     color: #ffffff;
 }
 
-.count-label.win {
+.count-container.small .count-label {
+    padding: 3px 7px;
+}
+
+.count-container .count-label.win {
     border-color: #0B94DB;
     background-color: #0B94DB;
 }
 
-.count-label.lose {
+.count-container .count-label.lose {
     border-color: #d9404a;
     background-color: #d9404a;
 }
 
-.count {
+.count-container .count {
     margin: 0 15px 0 10px;
     color: #808080;
+}
+
+.count-container.small .count {
+    margin: 0 10px 0 5px;
 }
 
 .progress {
     height: 35px;
 }
 
-.progress-bar {
+.progress.small {
+    height: 28px;
+}
+
+.progress .progress-bar {
     line-height: 35px;
     font-size: 15px;
+}
+
+.progress.small .progress-bar {
+    line-height: 28px;
+    font-size: 12px;
 }
 
 .progress-bar-primary {

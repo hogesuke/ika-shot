@@ -28,33 +28,36 @@
             %span.fa.fa-github-alt &nbsp;View on GitHub
     %div.container
       %h2.page-header.ika-font サマリ
-      %div.count-container
-        %h3.count-header.ika-font トータル
-        %span.count-label.win WIN
-        %span.count= @total_counts['win'].to_s
-        %span.count-label.lose LOSE
-        %span.count= @total_counts['lose'].to_s
-      %div.progress
-        %div.progress-bar.progress-bar-primary{ :style => "width: #{@total_win_rate}%" }= @total_win_rate.to_s + '%'
-        %div.progress-bar.progress-bar-danger{ :style => "width: #{@total_lose_rate}%" }= @total_lose_rate.to_s + '%'
-      %div.count-container
-        %h3.count-header.ika-font ウィークリー
-        %span.count-label.win WIN
-        %span.count= @week_counts['win'].to_s
-        %span.count-label.lose LOSE
-        %span.count= @week_counts['lose'].to_s
-      %div.progress
-        %div.progress-bar.progress-bar-primary{ :style => "width: #{@week_win_rate}%" }= @week_win_rate.to_s + '%'
-        %div.progress-bar.progress-bar-danger{ :style => "width: #{@week_lose_rate}%" }= @week_lose_rate.to_s + '%'
-      %div.count-container
-        %h3.count-header.ika-font デイリー
-        %span.count-label.win WIN
-        %span.count= @today_counts['win'].to_s
-        %span.count-label.lose LOSE
-        %span.count= @today_counts['lose'].to_s
-      %div.progress
-        %div.progress-bar.progress-bar-primary{ :style => "width: #{@today_win_rate}%" }= @today_win_rate.to_s + '%'
-        %div.progress-bar.progress-bar-danger{ :style => "width: #{@today_lose_rate}%" }= @today_lose_rate.to_s + '%'
+      %div.summary-block
+        %div.count-container
+          %h3.count-header.ika-font トータル
+          %span.count-label.win WIN
+          %span.count= @total_counts['win'].to_s
+          %span.count-label.lose LOSE
+          %span.count= @total_counts['lose'].to_s
+        %div.progress
+          %div.progress-bar.progress-bar-primary{ :style => "width: #{@total_win_rate}%" }= @total_win_rate.to_s + '%'
+          %div.progress-bar.progress-bar-danger{ :style => "width: #{@total_lose_rate}%" }= @total_lose_rate.to_s + '%'
+      %div.summary-block.small
+        %div.count-container.small
+          %h4.count-header.ika-font ウィークリー
+          %span.count-label.win WIN
+          %span.count= @week_counts['win'].to_s
+          %span.count-label.lose LOSE
+          %span.count= @week_counts['lose'].to_s
+        %div.progress.small
+          %div.progress-bar.progress-bar-primary{ :style => "width: #{@week_win_rate}%" }= @week_win_rate.to_s + '%'
+          %div.progress-bar.progress-bar-danger{ :style => "width: #{@week_lose_rate}%" }= @week_lose_rate.to_s + '%'
+      %div.summary-block.small
+        %div.count-container.small
+          %h4.count-header.ika-font デイリー
+          %span.count-label.win WIN
+          %span.count= @today_counts['win'].to_s
+          %span.count-label.lose LOSE
+          %span.count= @today_counts['lose'].to_s
+        %div.progress.small
+          %div.progress-bar.progress-bar-primary{ :style => "width: #{@today_win_rate}%" }= @today_win_rate.to_s + '%'
+          %div.progress-bar.progress-bar-danger{ :style => "width: #{@today_lose_rate}%" }= @today_lose_rate.to_s + '%'
       %h2.page-header.ika-font リザルト
       %div#result-container
         - @items.each do |item|
