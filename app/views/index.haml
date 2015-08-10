@@ -30,7 +30,7 @@
       %h2.page-header.ika-font サマリ
       %div.summary-block
         %div.count-container
-          %h3.count-header.ika-font トータル
+          %h3.count-header.ika-font Total
           %span.count-label.win WIN
           %span.count= @total_counts['win'].to_s
           %span.count-label.lose LOSE
@@ -40,7 +40,7 @@
           %div.progress-bar.progress-bar-danger{ :style => "width: #{@total_lose_rate}%" }= @total_lose_rate.to_s + '%'
       %div.summary-block.small
         %div.count-container.small
-          %h4.count-header.ika-font ウィークリー
+          %h4.count-header.ika-font Weekly
           %span.count-label.win WIN
           %span.count= @week_counts['win'].to_s
           %span.count-label.lose LOSE
@@ -50,7 +50,7 @@
           %div.progress-bar.progress-bar-danger{ :style => "width: #{@week_lose_rate}%" }= @week_lose_rate.to_s + '%'
       %div.summary-block.small
         %div.count-container.small
-          %h4.count-header.ika-font デイリー
+          %h4.count-header.ika-font Daily
           %span.count-label.win WIN
           %span.count= @today_counts['win'].to_s
           %span.count-label.lose LOSE

@@ -47,12 +47,17 @@
     margin-bottom: 15px;
 }
 
+.count-container h3 {
+    margin-bottom: 15px;
+}
+
 .count-container.small {
     margin-bottom: 11px;
 }
 
 .count-container.small h4 {
     margin-top: 0;
+    margin-bottom: 12px;
 }
 
 .count-container .count-label {
