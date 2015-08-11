@@ -40,7 +40,14 @@
 .summary-block.small {
     float: left;
     width: 50%;
-    padding: 0 5px;
+}
+
+.summary-block.small.left {
+    padding-right: 5px;
+}
+
+.summary-block.small.right {
+    padding-left: 5px;
 }
 
 .count-container {

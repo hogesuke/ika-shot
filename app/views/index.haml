@@ -38,7 +38,7 @@
         %div.progress
           %div.progress-bar.progress-bar-primary{ :style => "width: #{@total_win_rate}%" }= @total_win_rate.to_s + '%'
           %div.progress-bar.progress-bar-danger{ :style => "width: #{@total_lose_rate}%" }= @total_lose_rate.to_s + '%'
-      %div.summary-block.small
+      %div.summary-block.small.left
         %div.count-container.small
           %h4.count-header.ika-font Weekly
           %span.count-label.win WIN
@@ -48,7 +48,7 @@
         %div.progress.small
           %div.progress-bar.progress-bar-primary{ :style => "width: #{@week_win_rate}%" }= @week_win_rate.to_s + '%'
           %div.progress-bar.progress-bar-danger{ :style => "width: #{@week_lose_rate}%" }= @week_lose_rate.to_s + '%'
-      %div.summary-block.small
+      %div.summary-block.small.right
         %div.count-container.small
           %h4.count-header.ika-font Daily
           %span.count-label.win WIN
