@@ -86,6 +86,13 @@ get '/' do
     @today_lose_rate = (100 - @today_win_rate).round(1)
   end
 
+  max_continuity_temp = Result.get_max_continuity
+
+  @max_continuity = {
+      max_continuity_temp[0]['result'] => max_continuity_temp[0]['continuity_count'].to_s,
+      max_continuity_temp[1]['result'] => max_continuity_temp[1]['continuity_count'].to_s
+  }
+
   haml :index
 end
 

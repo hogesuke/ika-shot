@@ -58,6 +58,13 @@
         %div.progress.small
           %div.progress-bar.progress-bar-primary{ :style => "width: #{@today_win_rate}%" }= @today_win_rate.to_s + '%'
           %div.progress-bar.progress-bar-danger{ :style => "width: #{@today_lose_rate}%" }= @today_lose_rate.to_s + '%'
+      %div.summary-block.record
+        %div.count-container
+          %h3.count-header.ika-font Record
+          %span.count-label.win 連続 WIN
+          %span.count= @max_continuity['win']
+          %span.count-label.lose 連続 LOSE
+          %span.count= @max_continuity['lose']
       %h2.page-header.ika-font リザルト
       %div#result-container
         - @items.each do |item|

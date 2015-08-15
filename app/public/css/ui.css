@@ -50,6 +50,10 @@
     padding-left: 5px;
 }
 
+.summary-block.record {
+    clear: both;
+}
+
 .count-container {
     margin-bottom: 15px;
 }
